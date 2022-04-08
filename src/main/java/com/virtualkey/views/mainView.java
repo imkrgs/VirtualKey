@@ -49,7 +49,7 @@ public class mainView extends Views{
 
     @Override
     public void ExecuteMenu ( int option) {
-        this.showMenu();
+        //this.showMenu();
         switch (option) {
 
             case 1: // Show Files in Directory

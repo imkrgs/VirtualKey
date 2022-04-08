@@ -2,6 +2,7 @@ package com.virtualkey.entities;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class filesByUser {
 
@@ -37,7 +38,6 @@ public class filesByUser {
 
     // to search a file from directory
     public static void searchFile (String name) {
-        boolean flag = false;
         File f = new File(path+ name + ".txt");
         try {
             if (f.exists())
@@ -49,12 +49,13 @@ public class filesByUser {
         }
     }
 
-    // to return the list of file from directory
+    // to return the list of file from directory in sorted order
     public static ArrayList<String> listFile () {
         File f = new File(path);
         ArrayList<String> list = new ArrayList<>();
         try {
             for(String s : f.list()) list.add(s);
+            Collections.sort(list);
         }catch ( Exception ex ){
         }
         return list;
